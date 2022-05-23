@@ -1,0 +1,33 @@
+﻿@page
+@model Hospital.Pages.InsurenceModel
+@{
+	ViewData["Title"] = "Hospital";
+}
+
+<div>
+    <h1>Insurences</h1>
+    You can see here the insurences: <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>InsurenceId</th>
+                <th>Name</th>
+                <th>AmountSupport</th>
+                <th>PatientId</th>
+                </thead>
+                
+            <tbody>
+        @foreach (var insurence in Model.insurences){
+				<tr>
+					<td>@insurence.InsurenceId</td>
+					<td>@insurence.Name</td>
+					<td>@insurence.AmountSupport</td>
+					<td>@insurence.PatientId</td>
+			    </tr>
+			}
+        </tbody>
+
+    </table>
+    <a href ="./NewInsurence" class="btn btn-info" role="button">New Insurence</a>
+
+</div>
